@@ -1,0 +1,28 @@
+
+<div class="container">
+  <h1 class="my-5">My Tasks</h1>
+  <% @tasks.each do |task| %>
+  <div class="d-flex flex-column flex-md-row my-3 align-items-center justify-content-center">
+    <div class="list-group w-100">
+      <label class="list-group-item d-flex gap-3 p-3">
+        <input class="form-check-input flex-shrink-0" <%= task.completed == true ? "checked" : "" %> type="checkbox" style="font-size: 1.375em;">
+        <span class="pt-1 form-checked-content">
+          <strong><%= task.title %></strong>
+          <span class="delete">
+            <%= link_to "🗑️",
+            task_path(task.id),
+            data: {
+              turbo_method: :delete,
+              turbo_confirm: "Are you sure you want to delete #{task.title}?"
+            } %>
+          </span>
+          <small class="d-block text-body-secondary">
+            <%= link_to "View task details", task_path(task.id) %>
+          </small>
+        </span>
+      </label>
+    </div>
+  </div>
+  <% end %>
+  <%= link_to "Add a new task", create_path, class: "btn-primary btn mt-4" %>
+</div>

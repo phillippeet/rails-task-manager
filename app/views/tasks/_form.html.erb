@@ -1,0 +1,20 @@
+
+
+<%= form_with model: task do |f| %>
+
+<div class="form-group mb-3">
+  <%= f.label(:title, class: "mb-1") %><br>
+  <%= f.text_field(:title, class: "form-control", placeholder: "Insert title") %>
+</div>
+<div class="form-group mb-3">
+  <%= f.label(:details, class: "mb-1") %>
+  <%= f.text_area(:details, class: "form-control", placeholder: "Insert details", rows: "6") %>
+</div>
+<div class="form-group mb-3">
+  <%= f.check_box :completed %>
+  <%= f.label "Mark as complete" %>
+</div>
+  <%= f.submit(class: "btn-primary btn") %>
+  <%= link_to "Cancel", all_path, class: "btn-outline-secondary btn" %>
+
+<% end %>

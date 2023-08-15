@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+ /* body{font-family: arial;} */
+
+ h1{font-weight: bold !important}
+
+ .delete{position: absolute; top: 30px; right: 30px}
+ .delete a{text-decoration: none;}
+ strong a{text-decoration: none; color: #222}
+ a{text-decoration: none !important;}
+
+ .form-check-input {margin: 15px 0 0 !important}
+
+ /* label{font-weight: bold !important;} */

@@ -1,0 +1,19 @@
+
+
+<div class="container">
+  <h1 class="my-5">My Task</h1>
+  <div class="d-flex flex-column flex-md-row my-3 align-items-center justify-content-center">
+    <div class="list-group w-100">
+      <label class="list-group-item d-flex gap-3 p-3">
+        <span class="pt-1 form-checked-content">
+          <h3><%= @task.title %></h3>
+          <small class="d-block text-body-secondary">
+            <%= @task.details %>
+          </small>
+        </span>
+      </label>
+    </div>
+  </div>
+  <%= link_to "Edit task", edit_path, class: "btn-primary btn mt-4" %>
+  <%= link_to "Show all", all_path, class: "btn-outline-secondary btn mt-4" %>
+</div>
